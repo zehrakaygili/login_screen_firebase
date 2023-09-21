@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1033479256721",
+    "project_id": "registration-e3220",
+    "storage_bucket": "registration-e3220.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1033479256721:android:0edcebcee9dc1433a15d30",
+        "android_client_info": {
+          "package_name": "com.example.registration_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVaMyrFCKh1NwIxFAZ_1VU3HNi0KfOqTk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
