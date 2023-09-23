@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class TextFieldWidget extends StatelessWidget {
+class MyTextField extends StatelessWidget {
   final String labeltext;
   final controller;
-  final bool obscureText;
   final bool isPassword;
-  const TextFieldWidget({
+  final bool obscureText;
+  const MyTextField({
     super.key,
     required this.labeltext,
     required this.controller,
-    this.obscureText = false,
     this.isPassword = false,
+    this.obscureText = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(

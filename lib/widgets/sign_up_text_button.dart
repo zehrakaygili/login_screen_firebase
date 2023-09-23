@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:registration_firebase/pages/sign_up_page.dart';
 
-class SignUpButton extends StatelessWidget {
-  const SignUpButton({
+class SignUpTextButton extends StatelessWidget {
+  const SignUpTextButton({
     super.key,
   });
 

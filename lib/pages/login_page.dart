@@ -1,9 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:registration_firebase/pages/home_page.dart';
 import 'package:registration_firebase/widgets/background.dart';
 import 'package:registration_firebase/widgets/my_button.dart';
-import 'package:registration_firebase/widgets/sign_up_button.dart';
+import 'package:registration_firebase/widgets/my_text_field.dart';
+import 'package:registration_firebase/widgets/sign_up_text_button.dart';
 import 'package:registration_firebase/widgets/social_button.dart';
-import 'package:registration_firebase/widgets/text_field_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -34,14 +36,14 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child: TextFieldWidget(
+                child: MyTextField(
                   labeltext: "Email",
                   controller: emailController,
                 ),
               ),
               Padding(
                 padding: EdgeInsets.all(10.0),
-                child: TextFieldWidget(
+                child: MyTextField(
                   labeltext: "Password",
                   controller: passwordController,
                   obscureText: true,
@@ -49,6 +51,18 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               MyButton(
+                press: () {
+                  FirebaseAuth.instance
+                      .signInWithEmailAndPassword(
+                          email: emailController.text,
+                          password: passwordController.text)
+                      .then((value) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  }).onError((error, stackTrace) {
+                    print("Error ${error.toString()}");
+                  });
+                },
                 text: 'Login',
               ),
               Padding(
@@ -60,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                   verticalpadding: 15,
                 ),
               ),
-              SignUpButton()
+              SignUpTextButton(),
             ],
           ),
         ),

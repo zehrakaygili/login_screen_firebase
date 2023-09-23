@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
   final String text;
+  final Function press;
   const MyButton({
     super.key,
     required this.text,
+    required this.press,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () {},
+        onPressed: () {
+          press();
+        },
         child: Container(
           height: 60,
           width: 500,
