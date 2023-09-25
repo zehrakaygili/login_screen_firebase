@@ -27,7 +27,7 @@ class _SignUpPageState extends State<SignUpPage> {
             children: [
               Background(),
               Text(
-                "WELCOME!",
+                "SIGN UP",
                 style: TextStyle(fontSize: 35),
               ),
               SizedBox(

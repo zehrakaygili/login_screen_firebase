@@ -5,7 +5,6 @@ import 'package:registration_firebase/widgets/background.dart';
 import 'package:registration_firebase/widgets/my_button.dart';
 import 'package:registration_firebase/widgets/my_text_field.dart';
 import 'package:registration_firebase/widgets/sign_up_text_button.dart';
-import 'package:registration_firebase/widgets/social_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -28,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Background(),
               Text(
-                "WELCOME!",
+                "LOGIN",
                 style: TextStyle(fontSize: 35),
               ),
               SizedBox(
@@ -64,15 +63,6 @@ class _LoginPageState extends State<LoginPage> {
                   });
                 },
                 text: 'Login',
-              ),
-              Padding(
-                padding: EdgeInsets.all(8.0),
-                child: SocialButton(
-                  iconPath: 'assets/images/google.png',
-                  label: 'Continue with Google',
-                  horizontalPadding: 35,
-                  verticalpadding: 15,
-                ),
               ),
               SignUpTextButton(),
             ],
