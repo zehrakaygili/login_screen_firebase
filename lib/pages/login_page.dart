@@ -25,23 +25,23 @@ class _LoginPageState extends State<LoginPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Background(),
-              Text(
+              const Background(),
+              const Text(
                 "LOGIN",
                 style: TextStyle(fontSize: 35),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: MyTextField(
                   labeltext: "Email",
                   controller: emailController,
                 ),
               ),
               Padding(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: MyTextField(
                   labeltext: "Password",
                   controller: passwordController,
@@ -53,18 +53,23 @@ class _LoginPageState extends State<LoginPage> {
                 press: () {
                   FirebaseAuth.instance
                       .signInWithEmailAndPassword(
-                          email: emailController.text,
-                          password: passwordController.text)
+                    email: emailController.text,
+                    password: passwordController.text,
+                  )
                       .then((value) {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomePage()));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
                 },
                 text: 'Login',
               ),
-              SignUpTextButton(),
+              const SignUpTextButton(),
             ],
           ),
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final void Function() press;
   const MyButton({
     super.key,
     required this.text,
@@ -12,9 +12,7 @@ class MyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: () {
-          press();
-        },
+        onPressed: press,
         child: Container(
           height: 60,
           width: 500,
@@ -24,7 +22,7 @@ class MyButton extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
         ));
